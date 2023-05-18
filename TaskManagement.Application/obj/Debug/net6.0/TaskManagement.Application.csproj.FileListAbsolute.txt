@@ -1,0 +1,15 @@
+/home/dawit/DavG/A2SV/Eskalate_Internship/TaskManagement/TaskManagement.Application/obj/Debug/net6.0/TaskManagement.Application.csproj.AssemblyReference.cache
+/home/dawit/DavG/A2SV/Eskalate_Internship/TaskManagement/TaskManagement.Application/obj/Debug/net6.0/TaskManagement.Application.GeneratedMSBuildEditorConfig.editorconfig
+/home/dawit/DavG/A2SV/Eskalate_Internship/TaskManagement/TaskManagement.Application/obj/Debug/net6.0/TaskManagement.Application.AssemblyInfoInputs.cache
+/home/dawit/DavG/A2SV/Eskalate_Internship/TaskManagement/TaskManagement.Application/obj/Debug/net6.0/TaskManagement.Application.AssemblyInfo.cs
+/home/dawit/DavG/A2SV/Eskalate_Internship/TaskManagement/TaskManagement.Application/obj/Debug/net6.0/TaskManagement.Application.csproj.CoreCompileInputs.cache
+/home/dawit/DavG/A2SV/Eskalate_Internship/TaskManagement/TaskManagement.Application/bin/Debug/net6.0/TaskManagement.Application.deps.json
+/home/dawit/DavG/A2SV/Eskalate_Internship/TaskManagement/TaskManagement.Application/bin/Debug/net6.0/TaskManagement.Application.dll
+/home/dawit/DavG/A2SV/Eskalate_Internship/TaskManagement/TaskManagement.Application/bin/Debug/net6.0/ref/TaskManagement.Application.dll
+/home/dawit/DavG/A2SV/Eskalate_Internship/TaskManagement/TaskManagement.Application/bin/Debug/net6.0/TaskManagement.Application.pdb
+/home/dawit/DavG/A2SV/Eskalate_Internship/TaskManagement/TaskManagement.Application/bin/Debug/net6.0/TaskManagement.Domain.dll
+/home/dawit/DavG/A2SV/Eskalate_Internship/TaskManagement/TaskManagement.Application/bin/Debug/net6.0/TaskManagement.Domain.pdb
+/home/dawit/DavG/A2SV/Eskalate_Internship/TaskManagement/TaskManagement.Application/obj/Debug/net6.0/TaskManagement.Application.csproj.CopyComplete
+/home/dawit/DavG/A2SV/Eskalate_Internship/TaskManagement/TaskManagement.Application/obj/Debug/net6.0/TaskManagement.Application.dll
+/home/dawit/DavG/A2SV/Eskalate_Internship/TaskManagement/TaskManagement.Application/obj/Debug/net6.0/ref/TaskManagement.Application.dll
+/home/dawit/DavG/A2SV/Eskalate_Internship/TaskManagement/TaskManagement.Application/obj/Debug/net6.0/TaskManagement.Application.pdb

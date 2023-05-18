@@ -1,0 +1,12 @@
+/home/dawit/DavG/A2SV/Eskalate_Internship/TaskManagement/TaskManagement.Domain/bin/Debug/net6.0/TaskManagement.Domain.deps.json
+/home/dawit/DavG/A2SV/Eskalate_Internship/TaskManagement/TaskManagement.Domain/bin/Debug/net6.0/TaskManagement.Domain.dll
+/home/dawit/DavG/A2SV/Eskalate_Internship/TaskManagement/TaskManagement.Domain/bin/Debug/net6.0/ref/TaskManagement.Domain.dll
+/home/dawit/DavG/A2SV/Eskalate_Internship/TaskManagement/TaskManagement.Domain/bin/Debug/net6.0/TaskManagement.Domain.pdb
+/home/dawit/DavG/A2SV/Eskalate_Internship/TaskManagement/TaskManagement.Domain/obj/Debug/net6.0/TaskManagement.Domain.csproj.AssemblyReference.cache
+/home/dawit/DavG/A2SV/Eskalate_Internship/TaskManagement/TaskManagement.Domain/obj/Debug/net6.0/TaskManagement.Domain.GeneratedMSBuildEditorConfig.editorconfig
+/home/dawit/DavG/A2SV/Eskalate_Internship/TaskManagement/TaskManagement.Domain/obj/Debug/net6.0/TaskManagement.Domain.AssemblyInfoInputs.cache
+/home/dawit/DavG/A2SV/Eskalate_Internship/TaskManagement/TaskManagement.Domain/obj/Debug/net6.0/TaskManagement.Domain.AssemblyInfo.cs
+/home/dawit/DavG/A2SV/Eskalate_Internship/TaskManagement/TaskManagement.Domain/obj/Debug/net6.0/TaskManagement.Domain.csproj.CoreCompileInputs.cache
+/home/dawit/DavG/A2SV/Eskalate_Internship/TaskManagement/TaskManagement.Domain/obj/Debug/net6.0/TaskManagement.Domain.dll
+/home/dawit/DavG/A2SV/Eskalate_Internship/TaskManagement/TaskManagement.Domain/obj/Debug/net6.0/ref/TaskManagement.Domain.dll
+/home/dawit/DavG/A2SV/Eskalate_Internship/TaskManagement/TaskManagement.Domain/obj/Debug/net6.0/TaskManagement.Domain.pdb
