@@ -17,14 +17,20 @@ namespace TaskManagement.Application.Features.Tasks.DTOs.Validators
                .MaximumLength(200).WithMessage("{PropertyName} must not exceed {ComparisonValue} characters.");
 
             RuleFor(p => p.StartDate)
-               .NotEmpty().WithMessage("{PropertyName} is required.")
-               .LessThanOrEqualTo(p => p.EndDate).WithMessage("{PropertyName} must be less than or equal to {ComparisonValue}.");
+                .NotEmpty().WithMessage("{PropertyName} is required.")
+                .NotNull()
+                .GreaterThanOrEqualTo(DateTime.Now.Date).WithMessage("{PropertyName} must be greater than or equal to the current date.");
 
             RuleFor(p => p.EndDate)
+                .NotEmpty()
+                .WithMessage("{PropertyName} is required.")
+                .NotNull()
+                .GreaterThanOrEqualTo(p => p.StartDate)
+                .WithMessage("{PropertyName} must be greater than or equal to the Start Date.");
+
+            RuleFor(p => p.Completed)
                 .NotEmpty().WithMessage("{PropertyName} is required.")
-                .GreaterThanOrEqualTo(p => p.StartDate).WithMessage("{PropertyName} must be greater than or equal to {ComparisonValue}.");
-
-
+                .NotNull();
         }
     }
 }
