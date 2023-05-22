@@ -68,3 +68,11 @@
 /home/dawit/DavG/A2SV/Eskalate_Internship/TaskManagement/TaskManagement.API/obj/Debug/net6.0/ref/TaskManagement.API.dll
 /home/dawit/DavG/A2SV/Eskalate_Internship/TaskManagement/TaskManagement.API/obj/Debug/net6.0/TaskManagement.API.pdb
 /home/dawit/DavG/A2SV/Eskalate_Internship/TaskManagement/TaskManagement.API/obj/Debug/net6.0/TaskManagement.API.genruntimeconfig.cache
+/home/dawit/DavG/A2SV/Eskalate_Internship/TaskManagement/TaskManagement.API/bin/Debug/net6.0/Microsoft.AspNetCore.Authentication.JwtBearer.dll
+/home/dawit/DavG/A2SV/Eskalate_Internship/TaskManagement/TaskManagement.API/bin/Debug/net6.0/Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+/home/dawit/DavG/A2SV/Eskalate_Internship/TaskManagement/TaskManagement.API/bin/Debug/net6.0/Microsoft.IdentityModel.JsonWebTokens.dll
+/home/dawit/DavG/A2SV/Eskalate_Internship/TaskManagement/TaskManagement.API/bin/Debug/net6.0/Microsoft.IdentityModel.Logging.dll
+/home/dawit/DavG/A2SV/Eskalate_Internship/TaskManagement/TaskManagement.API/bin/Debug/net6.0/Microsoft.IdentityModel.Protocols.dll
+/home/dawit/DavG/A2SV/Eskalate_Internship/TaskManagement/TaskManagement.API/bin/Debug/net6.0/Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+/home/dawit/DavG/A2SV/Eskalate_Internship/TaskManagement/TaskManagement.API/bin/Debug/net6.0/Microsoft.IdentityModel.Tokens.dll
+/home/dawit/DavG/A2SV/Eskalate_Internship/TaskManagement/TaskManagement.API/bin/Debug/net6.0/System.IdentityModel.Tokens.Jwt.dll

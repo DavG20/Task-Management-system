@@ -3,10 +3,12 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using TaskManagement.Domain.Common;
 using TaskManagement.Domain;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.AspNetCore.Identity;
 
 namespace TaskManagement.Persistence
 {
-    public class TaskManagementDbContext : DbContext
+    public class TaskManagementDbContext : IdentityDbContext<AppUser>
     {
         public TaskManagementDbContext(DbContextOptions<TaskManagementDbContext> options)
            : base(options)
@@ -17,7 +19,12 @@ namespace TaskManagement.Persistence
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            base.OnModelCreating(modelBuilder);
+
             modelBuilder.ApplyConfigurationsFromAssembly(typeof(TaskManagementDbContext).Assembly);
+
+            modelBuilder.Entity<IdentityUserLogin<string>>().HasKey(l => new { l.LoginProvider, l.ProviderKey });
+
         }
 
         public override Task<int> SaveChangesAsync(CancellationToken cancellationToken = default)
@@ -31,16 +38,15 @@ namespace TaskManagement.Persistence
                 {
                     entry.Entity.DateCreated = DateTime.Now;
                 }
-            }  
+            }
 
 
             return base.SaveChangesAsync(cancellationToken);
         }
 
-        public DbSet<User> User { get; set; }
         public DbSet<Tasks> Tasks { get; set; }
         public DbSet<CheckList> CheckLists { get; set; }
-        
+
 
     }
 }

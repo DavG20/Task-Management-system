@@ -1,8 +1,9 @@
 using TaskManagement.Application;
 using TaskManagement.Persistence;
-// using TaskManagement.Identity;
 using Microsoft.OpenApi.Models;
 using Microsoft.AspNetCore.Identity;
+using TaskManagement.API.Extensions;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -18,9 +19,27 @@ builder.Services.Configure<IdentityOptions>(options =>
     options.Password.RequiredUniqueChars = 1;
 });
 
+builder.Services.AddAuthentication()
+    .AddCookie("Identity.Application", options =>
+    {
+        // Configure cookie options if needed
+    })
+    .AddCookie("Identity.External", options =>
+    {
+        // Configure cookie options if needed
+    })
+    .AddCookie("Identity.TwoFactorUserId", options =>
+    {
+        // Configure cookie options if needed
+    });
+
+    
+
+
 // Add services to the container.
 builder.Services.ConfigureApplicationServices();
 builder.Services.ConfigurePersistenceServices(builder.Configuration);
+builder.Services.AddIdentityServices(builder.Configuration);
 builder.Services.AddHttpContextAccessor();
 AddSwaggerDoc(builder.Services);
 builder.Services.AddControllers();
@@ -55,6 +74,7 @@ app.UseHttpsRedirection();
 app.UseAuthorization();
 
 
+
 app.MapControllers();
 
 app.Run();
@@ -68,7 +88,7 @@ void AddSwaggerDoc(IServiceCollection services)
         c.SwaggerDoc("v1", new OpenApiInfo
         {
             Version = "v1",
-            Title = "TaskManagement Api",
+            Title = "Task Management Api",
 
         });
 
