@@ -1,3 +1,4 @@
+using TaskManagement.Application.Features.Checklist.DTOs;
 using TaskManagement.Application.Features.Common;
 
 namespace TaskManagement.Application.Features.Tasks.DTOs
@@ -14,5 +15,7 @@ namespace TaskManagement.Application.Features.Tasks.DTOs
 
         public DateTime StartDate { get; set; }
         public DateTime EndDate { get; set; }
+
+        public ICollection<CheckListDto> Checklists { get; set; }
     }
 }

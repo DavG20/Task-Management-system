@@ -33,7 +33,7 @@ namespace TaskManagement.Application.Features.Tasks.CQRS.Handlers
             }
             else
             {
-                var tasks = _mapper.Map<tasksDomain.Tasks>(request.CreateTasksDto);
+                var tasks = _mapper.Map<tasksDomain.Task>(request.CreateTasksDto);
 
                 tasks = await _unitOfWork.TasksRepository.Add(tasks);
                 if (await _unitOfWork.Save() > 0)

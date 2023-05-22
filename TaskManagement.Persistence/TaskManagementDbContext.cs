@@ -25,6 +25,22 @@ namespace TaskManagement.Persistence
 
             modelBuilder.Entity<IdentityUserLogin<string>>().HasKey(l => new { l.LoginProvider, l.ProviderKey });
 
+            modelBuilder.Entity<AppUser>()
+         .HasMany(u => u.Tasks)
+         .WithOne(t => t.User)
+         .HasForeignKey(t => t.UserId)
+         .IsRequired();
+
+            modelBuilder.Entity<Domain.Task>()
+           .HasMany(t => t.CheckLists)
+           .WithOne()
+           .HasForeignKey(cl => cl.TasksId)
+           .IsRequired();
+
+
+            // modelBuilder.Entity<System.Threading.Tasks.Task>().HasNoKey();
+            // modelBuilder.Entity<CheckList>().HasNoKey();
+
         }
 
         public override Task<int> SaveChangesAsync(CancellationToken cancellationToken = default)
@@ -44,7 +60,7 @@ namespace TaskManagement.Persistence
             return base.SaveChangesAsync(cancellationToken);
         }
 
-        public DbSet<Tasks> Tasks { get; set; }
+        public DbSet<Domain.Task> Tasks { get; set; }
         public DbSet<CheckList> CheckLists { get; set; }
 
 

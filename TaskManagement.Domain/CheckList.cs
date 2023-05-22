@@ -8,6 +8,8 @@ namespace TaskManagement.Domain
         public string Title { get; set; }
 
         public int TasksId { get; set; }
+
+        public Task Tasks { get; set; }
         public string Description { get; set; }
 
         public bool Completed { get; set; }
