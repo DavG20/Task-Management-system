@@ -17,8 +17,13 @@ namespace TaskManagement.Persistence
         {
             services.AddDbContext<TaskManagementDbContext>(opt =>
             opt.UseNpgsql(configuration.GetConnectionString("TaskManagementConnectionString")));
+
+
             services.AddScoped<IUnitOfWork, UnitOfWork>();
-            
+
+            services.AddScoped<ICheckListRepository, CheckListRepository>();
+
+            services.AddScoped<ITasksRepository, TasksRepository>();
             return services;
         }
     }
