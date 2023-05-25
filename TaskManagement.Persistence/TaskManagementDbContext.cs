@@ -37,9 +37,9 @@ namespace TaskManagement.Persistence
             return base.SaveChangesAsync(cancellationToken);
         }
 
-        public DbSet<User> _Indices { get; set; }
-        public DbSet<Tasks> Rates { get; set; }
-        public DbSet<CheckList> Review { get; set; }
+        public DbSet<User> User { get; set; }
+        public DbSet<Tasks> Tasks { get; set; }
+        public DbSet<CheckList> CheckLists { get; set; }
         
 
     }
