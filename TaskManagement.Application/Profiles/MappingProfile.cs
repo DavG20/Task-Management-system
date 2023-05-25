@@ -20,6 +20,8 @@ namespace TaskManagement.Application.Profiles
             CreateMap<CheckList, CreateCheckListDto>().ReverseMap();
             CreateMap<CheckList, UpdateCheckListDto>().ReverseMap();
 
+
+
             
         }
         

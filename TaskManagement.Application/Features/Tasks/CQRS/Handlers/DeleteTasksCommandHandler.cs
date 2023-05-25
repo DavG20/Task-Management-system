@@ -1,3 +1,4 @@
+using System.Reflection.Metadata;
 using AutoMapper;
 using TaskManagement.Application.Contracts.Persistence;
 using TaskManagement.Application.Exceptions;
@@ -12,7 +13,7 @@ using System.Threading.Tasks;
 
 namespace TaskManagement.Application.Features.Tasks.CQRS.Handlers
 {
-    public class DeleteTasksCommandHandler : IRequestHandler<DeleteTasksCommand,Result<Unit>>
+    public class DeleteTasksCommandHandler : IRequestHandler<DeleteTasksCommand,Result<int>>
     {
         private readonly IUnitOfWork _unitOfWork;
         private readonly IMapper _mapper;
@@ -23,22 +24,24 @@ namespace TaskManagement.Application.Features.Tasks.CQRS.Handlers
             _mapper = mapper;
         }
 
-        public async Task<Result<Unit>> Handle(DeleteTasksCommand request, CancellationToken cancellationToken)
+        public async Task<Result<int>> Handle(DeleteTasksCommand request, CancellationToken cancellationToken)
         {
-            var response = new Result<Unit>();
-            var Tasks = await _unitOfWork.TasksRepository.Get(request.Id);
+            var response = new Result<int>();
+            var task = await _unitOfWork.TasksRepository.Get(request.Id);
 
-            if (Tasks == null)
+            if (task == null)
             {
-                return null;
+                response.Success = false ;
+                response.Message = "Failed to Delete";
             }
             else
             {
-                await _unitOfWork.TasksRepository.Delete(Tasks);
+                await _unitOfWork.TasksRepository.Delete(task);
                 if (await _unitOfWork.Save() > 0 )
                 {
                     response.Success = true;
                     response.Message = "Delete Successful";
+                    
                 }
                 else
                 {

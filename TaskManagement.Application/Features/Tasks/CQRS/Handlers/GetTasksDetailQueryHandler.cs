@@ -20,10 +20,13 @@ namespace TaskManagement.Application.Features.Tasks.CQRS.Handlers
         public async Task<Result<TasksDto>> Handle(GetTasksDetailQuery request, CancellationToken cancellationToken)
         {
             var response = new Result<TasksDto>();
-            var Tasks = await _unitOfWork.TasksRepository.Get(request.Id);
+            var task = await _unitOfWork.TasksRepository.Get(request.Id);
+            if (task is null) {
+                return null;
+            }
             response.Success = true;
             response.Message = "Fetch Success";
-            response.Value = _mapper.Map<TasksDto>(Tasks);
+            response.Value = _mapper.Map<TasksDto>(task);
 
             return response;
         }

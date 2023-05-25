@@ -36,8 +36,12 @@ namespace TaskManagement.Application.Features.Tasks.CQRS.Handlers
             {
                 var tasks = await _unitOfWork.TasksRepository.Get(request.UpdateTasksDto.Id);
 
-                if (tasks == null)
-                    return null;
+                if (tasks == null){
+                    response.Success = false;
+                    response.Message = "Update Failed";
+                    return response;
+                }
+                    
                    
                 _mapper.Map(request.UpdateTasksDto, tasks);
 
