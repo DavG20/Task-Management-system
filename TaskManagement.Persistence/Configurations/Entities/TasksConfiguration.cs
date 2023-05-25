@@ -11,9 +11,9 @@ using System.Threading.Tasks;
 
 namespace TaskManagement.Persistence.Configurations.Entities
 {
-    public class TasksConfiguration : IEntityTypeConfiguration<Tasks>
+    public class TasksConfiguration : IEntityTypeConfiguration<Domain.Task>
     {
-        public void Configure(EntityTypeBuilder<Tasks> builder)
+        public void Configure(EntityTypeBuilder<Domain.Task> builder)
         {
             // builder.HasData(
             //     new Tasks

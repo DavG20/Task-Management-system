@@ -41,8 +41,8 @@ namespace TaskManagement.Application.UnitTest.Checklist.Commands
                 Title = "title",
                 Description = "Sample Content",
                 Completed = true,
-                TasksId =1,
-        };
+                TasksId = 1,
+            };
 
             _handler = new CreateCheckListCommandHandler(_mockRepo.Object, _mapper);
 
@@ -54,35 +54,35 @@ namespace TaskManagement.Application.UnitTest.Checklist.Commands
         {
 
             // Create a valid task with the specified TaskId
-            var task = new Domain.Tasks{ Id = _CheckListDto.TasksId /* Set other properties accordingly */ };
+            var task = new Domain.Task { Id = _CheckListDto.TasksId /* Set other properties accordingly */ };
 
             // Mock the TaskRepository behavior to return the valid task
             _mockRepo.Setup(r => r.TasksRepository.Exists(_CheckListDto.TasksId))
                 .ReturnsAsync(true);
 
 
-             var result = await _handler.Handle(new CreateCheckListCommand { CreateCheckListDto = _CheckListDto }, CancellationToken.None);
+            var result = await _handler.Handle(new CreateCheckListCommand { CreateCheckListDto = _CheckListDto }, CancellationToken.None);
             result.ShouldBeOfType<Result<int>>();
             result.Success.ShouldBeTrue();
             var checkLists = await _mockRepo.Object.CheckListRepository.GetAll();
             checkLists.Count.ShouldBe(3);
         }
         [Fact]
-    public async Task CreateCheckList_InvalidTaskId_ReturnsFailure()
-    {
-    // Set an invalid TaskId that doesn't exist
-    _CheckListDto.TasksId = 999;
+        public async Task CreateCheckList_InvalidTaskId_ReturnsFailure()
+        {
+            // Set an invalid TaskId that doesn't exist
+            _CheckListDto.TasksId = 999;
 
-    // Mock the TaskRepository behavior to return false for the task existence
-    _mockRepo.Setup(r => r.TasksRepository.Exists(_CheckListDto.TasksId))
-        .ReturnsAsync(false);
+            // Mock the TaskRepository behavior to return false for the task existence
+            _mockRepo.Setup(r => r.TasksRepository.Exists(_CheckListDto.TasksId))
+                .ReturnsAsync(false);
 
-    var result = await _handler.Handle(new CreateCheckListCommand { CreateCheckListDto = _CheckListDto }, CancellationToken.None);
-    result.ShouldBeOfType<Result<int>>();
-    result.Success.ShouldBeFalse();
-    result.Message.ShouldBe("Creation Failed");
-    result.Errors.ShouldNotBeEmpty();
-    }
+            var result = await _handler.Handle(new CreateCheckListCommand { CreateCheckListDto = _CheckListDto }, CancellationToken.None);
+            result.ShouldBeOfType<Result<int>>();
+            result.Success.ShouldBeFalse();
+            result.Message.ShouldBe("Creation Failed");
+            result.Errors.ShouldNotBeEmpty();
+        }
 
     }
 }

@@ -5,15 +5,15 @@ using TaskManagement.Domain;
 
 namespace TaskManagement.Application.Profiles
 {
-    public class MappingProfile :Profile
+    public class MappingProfile : Profile
     {
 
         public MappingProfile()
         {
-            CreateMap<Tasks, TasksDto>().ReverseMap();
+            CreateMap<Domain.Task, TasksDto>().ReverseMap();
 
-            CreateMap<Tasks, CreateTasksDto>().ReverseMap();
-            CreateMap<Tasks, UpdateTasksDto>().ReverseMap();
+            CreateMap<Domain.Task, CreateTasksDto>().ReverseMap();
+            CreateMap<Domain.Task, UpdateTasksDto>().ReverseMap();
 
             CreateMap<CheckList, CheckListDto>().ReverseMap();
 
@@ -22,8 +22,8 @@ namespace TaskManagement.Application.Profiles
 
 
 
-            
+
         }
-        
+
     }
 }

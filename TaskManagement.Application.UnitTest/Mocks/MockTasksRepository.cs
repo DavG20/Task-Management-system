@@ -10,9 +10,9 @@ namespace TaskManagement.Application.UnitTest.Mocks
     {
         public static Mock<ITasksRepository> GetTasksRepository()
         {
-            var tasks = new List<Domain.Tasks>
+            var tasks = new List<Domain.Task>
             {
-                 new Domain.Tasks
+                 new Domain.Task
                 {
                     Title = "sample title",
                     Description = "Sample des",
@@ -20,10 +20,10 @@ namespace TaskManagement.Application.UnitTest.Mocks
                     StartDate = DateTime.Now.Date,
                     EndDate = DateTime.Now.Date.AddHours(2),
                     Id = 1,
-                    UserId = 1
+                    UserId = "1"
                 },
 
-                new Domain.Tasks
+                new Domain.Task
                 {
                     Title = "sample title ",
                     Description = "Sample des ",
@@ -31,7 +31,7 @@ namespace TaskManagement.Application.UnitTest.Mocks
                     StartDate = DateTime.Now.Date,
                     EndDate = DateTime.Now.Date.AddHours(1),
                     Id = 2,
-                    UserId = 2
+                    UserId = "2"
                 }
             };
 
@@ -39,7 +39,7 @@ namespace TaskManagement.Application.UnitTest.Mocks
 
             mockRepo.Setup(r => r.GetAll()).ReturnsAsync(tasks);
 
-            mockRepo.Setup(r => r.Add(It.IsAny<Domain.Tasks>())).ReturnsAsync((Domain.Tasks task) =>
+            mockRepo.Setup(r => r.Add(It.IsAny<Domain.Task>())).ReturnsAsync((Domain.Task task) =>
             {
                 task.Id = tasks.Count() + 1;
                 tasks.Add(task);
@@ -47,7 +47,7 @@ namespace TaskManagement.Application.UnitTest.Mocks
                 return task;
             });
 
-            mockRepo.Setup(r => r.Update(It.IsAny<Domain.Tasks>())).Callback((Domain.Tasks task) =>
+            mockRepo.Setup(r => r.Update(It.IsAny<Domain.Task>())).Callback((Domain.Task task) =>
             {
                 var newTasks = tasks.Where((r) => r.Id != task.Id);
                 tasks = newTasks.ToList();
@@ -55,9 +55,9 @@ namespace TaskManagement.Application.UnitTest.Mocks
                 MockUnitOfWork.changes += 1;
             });
 
-            mockRepo.Setup(r => r.Delete(It.IsAny<Domain.Tasks>())).Callback((Domain.Tasks task) =>
+            mockRepo.Setup(r => r.Delete(It.IsAny<Domain.Task>())).Callback((Domain.Task task) =>
             {
-                 if (tasks.Remove(task))
+                if (tasks.Remove(task))
                     MockUnitOfWork.changes += 1;
             });
 
